@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Assigment_6App: App {
+    @StateObject var themeStore = ThemeStore(named: "Default")
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ThemeChooser()
+                .environmentObject(themeStore)
         }
     }
 }
